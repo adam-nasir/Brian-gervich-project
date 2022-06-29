@@ -1,0 +1,60 @@
+@use "../abstracts";
+@use "../base";
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.73) 34%,
+      rgba(0, 0, 0, 0.56) 86%
+    ),
+    url("../../../assets/images/hero-background.jpg") no-repeat 2% 20% / cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.hero__content{
+    padding-top: 38%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__title {
+
+  color: abstracts.$heading-color;
+  font-size: clamp(5.5rem, 10vw, 11.6rem);
+  text-transform: uppercase;
+  text-align: center;
+  margin-inline: auto;
+  line-height: 0.9;
+  margin-bottom: 1.2rem;
+  
+}
+
+.main__subtitle {
+  color: #d9d9d9;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  margin-bottom: 1.5rem;
+  
+  
+}
+
+.description{
+    line-height: initial;
+    color: #d9d9d9;
+    max-width: 26rem;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    margin-bottom: 4rem;
+
+}

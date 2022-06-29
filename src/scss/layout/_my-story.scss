@@ -1,0 +1,35 @@
+@use "../abstracts";
+@use "../base";
+@use "../utilities";
+.about {
+  background-color: abstracts.$primary-bg-color;
+}
+
+.about__img-content {
+  height: 55rem;
+  width: 100%;
+  position: relative;
+
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.219);
+  }
+}
+
+
+
+.about__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.about__text-content{
+  padding: 6rem 4rem;
+}

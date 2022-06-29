@@ -1,0 +1,61 @@
+@use "../abstracts";
+
+.main-header {
+  position: fixed;
+  z-index: 999;
+  background: transparent;
+  width: 100%;
+  margin: 1.8rem 0;
+  transition: margin 0.2s, background 0.2s;
+  padding: 1.5rem 0;
+}
+
+
+
+.logo {
+  position: relative;
+  z-index: 999999;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__menu {
+  position: fixed;
+  height: 100%;
+  background-color: abstracts.$primary-bg-color;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar__list {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -60%);
+  opacity: 0;
+  visibility: hidden;
+transition: all 0.5s ease;
+}
+
+.navbar__list-item {
+  margin-inline: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__list-link {
+  display: inline-block;
+  font-size: 3rem;
+  padding: 0.45rem 0;
+  color: #fff;
+}

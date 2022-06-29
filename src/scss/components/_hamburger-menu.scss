@@ -1,0 +1,57 @@
+@use "../abstracts";
+
+.mobile-menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.8rem;
+  height: 3.8rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  z-index: 999999;
+}
+
+.hamburger-menu {
+  width: 3.8rem;
+  height: 0.5rem;
+  background-color: abstracts.$logo-color;
+  transition: all 0.2s ease-in-out;
+
+
+  &::after,
+  &::before {
+    content: "";
+    width: 3.8rem;
+    height: 0.5rem;
+    position: absolute;
+    background-color: abstracts.$logo-color;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &::after {
+    transform: translateY(-1rem);
+  }
+
+  &::before {
+    transform: translateY(1rem);
+  }
+}
+
+//ANIMATION
+
+.mobile-menu.open .hamburger-menu {
+  background: transparent;
+}
+
+.mobile-menu.open .hamburger-menu::before {
+  border-radius: 3px;
+  transform: rotate(45deg) translateX(3px) translateY(-2px);
+  
+}
+
+.mobile-menu.open .hamburger-menu::after{
+  border-radius: 3px;
+ transform: rotate(-45deg) translateX(2px) translateY(3px);
+
+}

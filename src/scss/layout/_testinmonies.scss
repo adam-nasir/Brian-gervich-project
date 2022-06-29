@@ -1,0 +1,11 @@
+@use "../abstracts";
+
+.testimonies{
+    background-color: abstracts.$secondary-bg-color;
+    text-align: center;
+
+    .section-title{
+        margin-block: 3rem 3rem;
+    }
+}
+

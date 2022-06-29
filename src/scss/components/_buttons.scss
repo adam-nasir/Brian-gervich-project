@@ -1,0 +1,40 @@
+@use "../abstracts";
+
+%btn-shared{
+    transition: background 0.2s ease;
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 0.36em 2em; 
+    border-radius: 5px;
+    background: abstracts.$secondary-bg-color;
+}
+
+.btn{
+    @extend %btn-shared;
+    margin-bottom: 3rem;
+    &-transparent{
+        @extend %btn-shared;
+        background: transparent;
+        border: 2px solid rgb(180, 180, 180);
+        padding: 0.36em 1em; 
+
+        &:hover{
+            background:#b79d80;
+        }
+    }
+
+    &-card{
+        @extend %btn-shared;
+        background: transparent;
+        border: 2px solid rgb(180, 180, 180);
+        color: abstracts.$card-color;
+        padding: 0.36em 3em; 
+        letter-spacing: 2px;
+        &:hover{
+            background:#334d8a62;
+        }
+    }
+    &:hover{
+        background:#334d8a;
+    }
+}

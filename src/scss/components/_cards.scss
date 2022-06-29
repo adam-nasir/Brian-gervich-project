@@ -1,0 +1,129 @@
+@use "../abstracts";
+
+.card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 3rem;
+  background-color: abstracts.$primary-bg-color;
+  color: abstracts.$card-color;
+
+  img {
+    width: 14rem;
+    height: auto;
+    margin-bottom: 1.89rem;
+  }
+
+  .card-title {
+    font-size: 3.5rem;
+    line-height: 1;
+    font-weight: 100;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  span {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: abstracts.$card-color;
+      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 0.2rem;
+      top: 160%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: abstracts.$card-color;
+      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 0.5rem;
+      top: 130%;
+    }
+  }
+
+  .card-description {
+    margin-top: 1.5rem;
+    line-height: 123.5%;
+    margin-bottom: 2rem;
+  }
+}
+
+#card-1,
+#card-3 {
+  background-color: abstracts.$secondary-bg-color;
+}
+
+//---Testinmonies Cards---//
+
+.testimonies__card {
+  background-color: abstracts.$secondary-bg-color;
+  &__review {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+
+    .star {
+      width: 29px;
+      margin-inline: 0.2rem;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: #ffcd92;
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+    .quotes {
+      color: rgba(255, 255, 255, 0.416);
+      font-size: 2rem;
+    }
+  }
+  &__description {
+    font-weight: 200;
+    color: #ffffffb8;
+    line-height: 3.285rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.05rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__person-info {
+    text-align: center;
+    img {
+      width: 10rem;
+      margin-inline: auto;
+      // height: 10rem;
+      border-radius: 50%;
+      border: 8px solid rgba(72, 82, 105, 1);
+      margin-bottom: 1.2rem;
+    }
+  }
+}
+
+.person-info__description {
+   font-style: italic;
+   font-weight: 600;
+   font-size: 1.45rem;
+   line-height: 1.9rem;
+   color:#fff;
+   
+   text-align: center;
+   letter-spacing: 0.05rem;
+   text-transform: uppercase;
+
+
+  span{
+   display: block;
+   color: rgba(255, 255, 255, 0.53);
+   font-style: normal;
+   font-size: 1.3rem;
+  }
+}
