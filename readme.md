@@ -6,4 +6,3 @@ relearn how to extend
 
 working on navbar
 
-https://www.youtube.com/watch?v=dIyVTjJAkLw&t=9s&ab_channel=codeSTACKr
