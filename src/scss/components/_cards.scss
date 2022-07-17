@@ -1,5 +1,7 @@
 @use "../abstracts";
 
+
+// These card the service cards
 .card {
   text-align: center;
   display: flex;
@@ -17,7 +19,7 @@
   }
 
   .card-title {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     line-height: 1;
     font-weight: 100;
     margin-bottom: 2rem;
@@ -65,13 +67,19 @@
 
 .testimonies__card {
   background-color: abstracts.$secondary-bg-color;
+  padding: 4rem 4rem 2rem 4rem;
+  &-accent-color{
+    background-color: abstracts.$primary-bg-color;
+  }
+
+
   &__review {
     display: flex;
     justify-content: center;
     margin-bottom: 2.5rem;
 
     .star {
-      width: 29px;
+      width: 27px;
       margin-inline: 0.2rem;
     }
   }
@@ -79,11 +87,23 @@
   &__title {
     text-transform: uppercase;
     color: #ffcd92;
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     margin-bottom: 0.5rem;
+    
     .quotes {
       color: rgba(255, 255, 255, 0.416);
-      font-size: 2rem;
+      font-size: 1.4rem;
+      
+
+      &-right{
+        
+        transform:translate(0, -11px);
+      }
+      &-left{
+        transform:translate(3px, -10.5px);
+      }
+
+      
     }
   }
   &__description {
@@ -98,12 +118,14 @@
   &__person-info {
     text-align: center;
     img {
-      width: 10rem;
+      object-fit: cover;
+      width: 11rem;
+      height: 11rem;
       margin-inline: auto;
       // height: 10rem;
       border-radius: 50%;
-      border: 8px solid rgba(72, 82, 105, 1);
-      margin-bottom: 1.2rem;
+      border: 6px solid rgba(72, 82, 105, 1);
+      margin-bottom: 1rem;
     }
   }
 }
@@ -123,7 +145,145 @@
   span{
    display: block;
    color: rgba(255, 255, 255, 0.53);
-   font-style: normal;
-   font-size: 1.3rem;
+   font-style: italic;
+   font-size: 1.4rem;
+   padding-bottom: 1rem;
+   text-transform: capitalize;
   }
+}
+
+
+//====================================//
+//-----------Media Queries-----------//
+//==================================//
+
+@media screen and (min-width: abstracts.$breakpoint-med){
+  .testimonies__card {
+    background-color: abstracts.$secondary-bg-color;
+    padding: 4rem 4rem 2rem 4rem;
+    &-accent-color{
+      background-color: abstracts.$primary-bg-color;
+    }
+  
+  
+    &__review {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+  
+      .star {
+        width: 27px;
+        margin-inline: 0.2rem;
+      }
+    }
+  
+    &__title {
+      text-transform: uppercase;
+      color: #ffcd92;
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      
+      .quotes {
+        color: rgba(255, 255, 255, 0.416);
+        font-size: 1.4rem;
+        
+  
+        &-right{
+          
+          transform:translate(0, -11px);
+        }
+        &-left{
+          transform:translate(3px, -10.5px);
+        }
+  
+        
+      }
+    }
+    &__description {
+      font-weight: 200;
+      color: #ffffffb8;
+      line-height: 3.285rem;
+      font-size: 1.8rem;
+      letter-spacing: 0.05rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    &__person-info {
+      text-align: center;
+      img {
+        object-fit: cover;
+        width: 11rem;
+        height: 11rem;
+        margin-inline: auto;
+        // height: 10rem;
+        border-radius: 50%;
+        border: 6px solid rgba(72, 82, 105, 1);
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  
+  .person-info__description {
+     font-style: italic;
+     font-weight: 600;
+     font-size: 1.45rem;
+     line-height: 1.9rem;
+     color:#fff;
+     
+     text-align: center;
+     letter-spacing: 0.05rem;
+     text-transform: uppercase;
+  
+  
+    span{
+     display: block;
+     color: rgba(255, 255, 255, 0.53);
+     font-style: italic;
+     font-size: 1.4rem;
+     padding-bottom: 1rem;
+     text-transform: capitalize;
+    }
+  }
+
+}
+
+
+
+
+
+// Large Breakpoint Styling 
+@media screen and (min-width: abstracts.$breakpoint-lg) {
+
+// These card the service cards
+.card {
+  max-width: 35rem;
+  padding: 7rem 4rem 8rem 4rem;
+
+
+  img {
+    width: 16rem;
+    height: auto;
+    margin-bottom: 2.3rem;
+  
+  }
+
+  .card-title {
+    font-size: 3.5rem;
+    margin-bottom: 2.5rem;
+  
+  }
+
+  .card-description {
+    margin-top: 1.5rem;
+    line-height: 123.5%;
+    margin-bottom: 2.5rem;
+  }
+}
+
+#card-1,
+#card-3 {
+  background-color: abstracts.$secondary-bg-color;
+}
+
+
 }

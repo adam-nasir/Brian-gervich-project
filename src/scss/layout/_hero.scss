@@ -2,30 +2,29 @@
 @use "../base";
 
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.73) 34%,
       rgba(0, 0, 0, 0.56) 86%
     ),
-    url("../../../assets/images/hero-background.jpg") no-repeat 2% 20% / cover;
+    url("../../../assets/images/hero-background-mid.jpg") no-repeat 2% 20% /
+      cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-
-.hero__content{
-    padding-top: 38%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.hero__content {
+  padding-top: 38%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main__title {
-
   color: abstracts.$heading-color;
   font-size: clamp(5.5rem, 10vw, 11.6rem);
   text-transform: uppercase;
@@ -33,7 +32,6 @@
   margin-inline: auto;
   line-height: 0.9;
   margin-bottom: 1.2rem;
-  
 }
 
 .main__subtitle {
@@ -45,16 +43,100 @@
   text-transform: uppercase;
   letter-spacing: 1rem;
   margin-bottom: 1.5rem;
-  
-  
 }
 
-.description{
-    line-height: initial;
-    color: #d9d9d9;
-    max-width: 26rem;
-    letter-spacing: 1.5px;
-    font-weight: 400;
-    margin-bottom: 4rem;
+.description {
+  line-height: initial;
+  color: #d9d9d9;
+  max-width: 26rem;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
 
+.hero-button-container{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+//====================================//
+//-----------Media Queries-----------//
+//==================================//
+
+
+@media screen and (min-width: abstracts.$breakpoint-med) {
+  .hero__content {
+    padding-block: 25rem 10rem;
+  }
+}
+
+// Large Breakpoint Styling
+@media screen and (min-width: abstracts.$breakpoint-lg) {
+  .hero {
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.6699813714548319) 71%,
+        rgba(0, 0, 0, 0.4010738084296218) 100%
+      ),
+      url("../../../assets/images/hero-background-mid.jpg") no-repeat 2% 20% /
+        cover;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .hero-container{
+      width: 100%;
+    }
+  }
+
+  .hero__content {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: -5px;
+  }
+
+  .main__title {
+    color: abstracts.$heading-color;
+    font-size: 10rem;
+    text-transform: uppercase;
+    text-align: left;
+    margin-inline: initial;
+    line-height: 0.9;
+    margin-bottom: 1.2rem;
+  }
+
+  .main__subtitle {
+    font-size: 1.75rem;
+    margin-left: 1rem;
+
+  }
+
+  .description {
+    line-height: 1.5;
+    color: #d9d9d9;
+    max-width: 55rem;
+    margin-bottom: 4rem;
+    margin-left: 1rem;
+    font-size: 1.75rem;
+    
+  }
+
+  .hero-button-container{
+    display: initial;
+    margin-left: 0.8rem;
+
+    .btn{
+      margin-right:2.5rem;
+    }
+  }
+}
+
+// X-large Breakpoint Styling
+@media screen and (min-width: abstracts.$breakpoint-xl) {
 }

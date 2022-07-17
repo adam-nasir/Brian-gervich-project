@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chef Brian | Personal Chef and Catering Events| Toronto</title>
-    <link rel="stylesheet" href="dist/css/main.css">
     <script src="https://kit.fontawesome.com/4d2249267b.js" crossorigin="anonymous"></script>
+    <title>Chef Brian | Personal Chef and Catering Events| Toronto</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="dist/css/main.css">
+
 </head>
 
 <body>
@@ -15,6 +17,7 @@
     <header class="main-header">
         <div class="container">
             <nav class="navbar">
+                <!-- Logo -->
                 <a href="index.html" class="logo">
                     <img src="./assets/Logo.svg" alt="BG logo">
                 </a>
@@ -30,6 +33,9 @@
                         </li>
                         <li class="navbar__list-item">
                             <a href="#services" class="navbar__list-link">Services</a>
+                        </li>
+                        <li class="navbar__list-item">
+                            <a href="#testimonies" class="navbar__list-link">Testimonies</a>
                         </li>
                         <li class="navbar__list-item btn--transparent">
                             <a href="#contacts" class="navbar__list-link">Contacts</a>
@@ -52,8 +58,8 @@
 
 
     <!-- Hero Section -->
-    <section class="hero hero-container">
-        <div class="container">
+    <section class="hero " id="home">
+        <div class="container hero-container">
             <div class="hero__content">
                 <h1 class="main__title">Brain
                     <br>Gervich
@@ -62,9 +68,13 @@
                 <p class="description">
                     A 3 starred michelin chef that bring a culinary experience you and yours guests will not forget.
                 </p>
+                <div class="hero-button-container">
+                    <a href="#contacts" class="btn">Book a Call</a>
+                    <a href="#services" class="btn-transparent"> Check Services</a>
+                </div>
 
-                <a href="#contacts" class="btn">Book a Call</a>
-                <a href="#services" class="btn-transparent"> Check Services</a>
+
+
             </div>
         </div>
 
@@ -72,8 +82,8 @@
 
     </section>
     <!-- My Story Section -->
-    <section class=" about grid">
-        <div class=" info__text-content container section-block">
+    <section class=" about grid main-section-block" id="mystory">
+        <div class=" info__text-content about__text-content container section-block">
             <h2 class="section-title">
                 My story
             </h2>
@@ -89,8 +99,8 @@
     </section>
 
     <!-- Inspiration -->
-    <section class="inspiration grid">
-        <div class="info__text-content container section-block-light-lg">
+    <section class="inspiration grid main-section-block-left">
+        <div class="info__text-content container section-block-light-lg my-inspiration__text-content">
             <h2 class="section-title">
                 My inspiration
             </h2>
@@ -107,118 +117,262 @@
 
     <!-- Services -->
 
-    <section class="services service-container">
-        <div class="services__content">
-            <div class="card" id="card-1">
-                <img src="./assets/card-logo-1.svg" alt="fork and knife">
-                <h3 class="card-title">
-                    Tasting<br><span>Menu</span>
-                </h3>
-                <p class="card-description">
-                    10 course meal that weaves
-                    intericate story of favours
-                </p>
-                <a href="#services" class="btn-card">See Menu ></a>
-            </div>
-            <div class="card" id="card-2">
-                <img src="./assets/card-logo-2.svg" alt="chef hat">
-                <h3 class="card-title">
-                    Catering<br><span>Menu</span>
-                </h3>
-                <p class="card-description">
-                    10 course meal that weaves
-                    intericate story of favours
-                </p>
-                <a href="#services" class="btn-card">See Menu ></a>
-            </div>
-            <div class="card" id="card-3">
-                <img src="./assets/card-logo-3.svg" alt="wine bottle">
-                <h3 class="card-title">
-                    Wine<br><span>Menu</span>
-                </h3>
-                <p class="card-description">
-                    10 course meal that weaves
-                    intericate story of favours
-                </p>
-                <a href="#services" class="btn-card">See Menu ></a>
+    <section class="services" id="services">
+        <div class="service-container">
+            <div class="services__content">
+                <div class="card" id="card-1">
+                    <img src="./assets/card-logo-1.svg" alt="fork and knife">
+                    <h3 class="card-title">
+                        Tasting<br><span>Menu</span>
+                    </h3>
+                    <p class="card-description">
+                        10 course meal that weaves
+                        intericate story of favours
+                    </p>
+                    <a href="#services" class="btn-card btn-transparent-services">See Menu ></a>
+                </div>
+                <div class="card" id="card-2">
+                    <img src="./assets/card-logo-2.svg" alt="chef hat">
+                    <h3 class="card-title">
+                        Catering<br><span>Menu</span>
+                    </h3>
+                    <p class="card-description">
+                        10 course meal that weaves
+                        intericate story of favours
+                    </p>
+                    <a href="#services" class="btn-card btn-transparent-services">See Menu ></a>
+                </div>
+                <div class="card" id="card-3">
+                    <img src="./assets/card-logo-3.svg" alt="wine bottle">
+                    <h3 class="card-title">
+                        Wine<br><span>Menu</span>
+                    </h3>
+                    <p class="card-description">
+                        10 course meal that weaves
+                        intericate story of favours
+                    </p>
+                    <a href="#services" class="btn-card btn-transparent-services">See Menu ></a>
+                </div>
             </div>
         </div>
+
     </section>
 
     <!-- Testinmonies -->
 
-    <section class="testimonies">
+    <section class="testimonies" id="testimonies">
         <h2 class="section-title">
             Testinmonies
         </h2>
-        <div class="testimonies__content container">
-            <div class="testimonies__card testimonies__card-accent ">
+        <div class="testimonies__content swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide testimonies__card testimonies__card-accent-color ">
 
-                <h3 class="testimonies__card__title">
-                    <span class="quotes">"</span>
-                    Unforgetable
-                    <span class="quotes">"</span>
-                </h3>
-                <div class="testimonies__card__review">
-                    <img src="./assets/star.svg" class="star" alt="star">
-                    <img src="./assets/star.svg" class="star" alt="star">
-                    <img src="./assets/star.svg" class="star" alt="star">
-                    <img src="./assets/star.svg" class="star" alt="star">
-                    <img src="./assets/star.svg" class="star" alt="star">
-                </div>
-                <p class="testimonies__card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, tincidunt pretium blandit praesent
-                    iaculis. Eleifend quis fermentum pretium sem at amet sit. Massa massa sociis ut turpis viverra
-                    facilisi!
-                </p>
-                <div class="testimonies__card__person-info">
-                    <img src="./assets/person-1.jpg" alt="image of a person">
-                    <p class="person-info__description">
-                        Person #1
-                        <span>Halimton, Ontario</span>
+                    <h3 class="testimonies__card__title">
+                        <i class="fa-solid fa-quote-left quotes quotes-left"></i>
+                        Truly Amazing
+                        <i class="fa-solid fa-quote-right quotes quotes-right"></i>
+                    </h3>
+                    <div class="testimonies__card__review">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                    </div>
+                    <p class="testimonies__card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, tincidunt pretium blandit
+                        praesent
+                        iaculis. Eleifend quis fermentum pretium sem at amet sit. Massa massa sociis ut turpis viverra
+                        facilisi!
                     </p>
+                    <div class="testimonies__card__person-info">
+                        <img src="./assets/person-1.jpg" alt="image of a person">
+                        <p class="person-info__description">
+                            Person #1
+                            <span>Halimton, Ontario</span>
+                        </p>
+                    </div>
                 </div>
+                <div class="swiper-slide testimonies__card  ">
+
+                    <h3 class="testimonies__card__title">
+                        <i class="fa-solid fa-quote-left quotes quotes-left"></i>
+                        A Masterpiece
+                        <i class="fa-solid fa-quote-right quotes quotes-right"></i>
+                    </h3>
+                    <div class="testimonies__card__review">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                    </div>
+                    <p class="testimonies__card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, tincidunt pretium blandit
+                        praesent
+                        iaculis. Eleifend quis fermentum pretium sem at amet sit. Massa massa sociis ut turpis viverra
+                        facilisi!
+                    </p>
+                    <div class="testimonies__card__person-info">
+                        <img src="./assets/person-2.jpg" alt="image of a person">
+                        <p class="person-info__description">
+                            Person #1
+                            <span>Halimton, Ontario</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide testimonies__card testimonies__card-accent-color ">
+
+                    <h3 class="testimonies__card__title">
+                        <i class="fa-solid fa-quote-left quotes quotes-left"></i>
+                        Breathtaking
+                        <i class="fa-solid fa-quote-right quotes quotes-right"></i>
+                    </h3>
+                    <div class="testimonies__card__review">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                    </div>
+                    <p class="testimonies__card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, tincidunt pretium blandit
+                        praesent
+                        iaculis. Eleifend quis fermentum pretium sem at amet sit. Massa massa sociis ut turpis viverra
+                        facilisi!
+                    </p>
+                    <div class="testimonies__card__person-info">
+                        <img src="./assets/person-3.jpg" alt="image of a person">
+                        <p class="person-info__description">
+                            Person #1
+                            <span>Halimton, Ontario</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide testimonies__card testimonies__card-accent ">
+
+                    <h3 class="testimonies__card__title">
+                        <i class="fa-solid fa-quote-left quotes quotes-left"></i>
+                        Another Level
+                        <i class="fa-solid fa-quote-right quotes quotes-right"></i>
+                    </h3>
+                    <div class="testimonies__card__review">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                    </div>
+                    <p class="testimonies__card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, tincidunt pretium blandit
+                        praesent
+                        iaculis. Eleifend quis fermentum pretium sem at amet sit. Massa massa sociis ut turpis viverra
+                        facilisi!
+                    </p>
+                    <div class="testimonies__card__person-info">
+                        <img src="./assets/person-4.jpg" alt="image of a person">
+                        <p class="person-info__description">
+                            Person #1
+                            <span>Halimton, Ontario</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide testimonies__card testimonies__card-accent-color ">
+
+                    <h3 class="testimonies__card__title">
+                        <i class="fa-solid fa-quote-left quotes quotes-left"></i>
+                        astounding
+                        <i class="fa-solid fa-quote-right quotes quotes-right"></i>
+                    </h3>
+                    <div class="testimonies__card__review">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                        <img src="./assets/star.svg" class="star" alt="star">
+                    </div>
+                    <p class="testimonies__card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, tincidunt pretium blandit
+                        praesent
+                        iaculis. Eleifend quis fermentum pretium sem at amet sit. Massa massa sociis ut turpis viverra
+                        facilisi!
+                    </p>
+                    <div class="testimonies__card__person-info">
+                        <img src="./assets/person-5.jpg" alt="image of a person">
+                        <p class="person-info__description">
+                            Person #1
+                            <span>Halimton, Ontario</span>
+                        </p>
+                    </div>
+                </div>
+                
             </div>
+            <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+
         </div>
 
     </section>
 
     <!-- Contact Us  -->
 
-    <section class="contact contact-container">
-        <form action="#">
+    <section class="contact contact-container" id="contacts">
+        <form class="form" action="#">
             <h2 class="section-title">
                 Let's Chat
             </h2>
             <div class="contact-info">
-                <div class="contact-info__email"></div>
-                <div class="contact-info__phone"></div>
-                <div class="contact-info__social-media"></div>
+                <div class="contact-info__email">
+                    <i class="fa-solid fa-envelope icon"></i>
+                    <span>Braingrevich@gmail.com</span>
+                </div>
+                <div class="contact-info__phone">
+                    <i class="fa-solid fa-phone icon"></i>
+                    <span>416-342-1233</span>
+                </div>
+                <div class="contact-info__social-media">
+                    <i class="fa-brands fa-instagram icon"></i>
+                    <i class="fa-brands fa-twitter icon"></i>
+                    <i class="fa-brands fa-facebook icon"></i>
+                    <i class="fa-brands fa-linkedin icon"></i>
+                </div>
             </div>
             <div class="form__content">
                 <div class="form__input">
-                    <label for="name"></label>
-                    <input type="text" name="name" id="name">
+
+                    <input type="text" class="input-class" name="name" id="name" required>
+                    <label for="name" class="label-class">Name:</label>
                 </div>
                 <div class="form__input">
-                    <label for="name"></label>
-                    <input type="text" name="name" id="name">
+                    <input type="email" class="input-class" name="email" id="email" required>
+                    <label for="email" class="label-class">Email:</label>
                 </div>
-                <div class="form__input">
-                    <label for="Message"></label>
-                    <textarea name="Message" id="Message" cols="30" rows="10"></textarea>
+                <div class="form__input form__textarea">
+                    <textarea name="Message" id="Message" class="textarea-class"></textarea>
+                    <div class="textarea-line" id="textarea-line-1"></div>
+                    <div class="textarea-line" id="textarea-line-2"></div>
+                    <div class="textarea-line" id="textarea-line-3"></div>
+                    <div class="textarea-line" id="textarea-line-4"></div>
+                    <label class="textarea-label-class" for="Message">Message</label>
                 </div>
                 <button class="btn-submit">Sumbit</button>
             </div>
-
-
         </form>
 
 
     </section>
+    <footer class="footer container">
+        <p>&copy; 2022 Designed by Adam Nasir</p>
+    </footer>
 
 
-
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./scripts/swiper.js"></script>
     <script src="./scripts/app.js"></script>
 </body>
 

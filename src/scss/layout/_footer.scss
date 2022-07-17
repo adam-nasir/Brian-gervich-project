@@ -1,13 +1,11 @@
 @use "../abstracts";
 
-.testimonies{
-    position: relative;
-    background-color: abstracts.$primary-bg-color;
+.footer{
     text-align: center;
-
-    .section-title{
-        margin-block: 3rem 0rem;
-    }
+    color: rgb(187, 187, 187);
+    background: abstracts.$primary-bg-color;
+    padding: 2rem;
+    
 }
 
 

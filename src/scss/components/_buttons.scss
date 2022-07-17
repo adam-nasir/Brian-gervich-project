@@ -1,40 +1,75 @@
 @use "../abstracts";
 
-%btn-shared{
-    transition: background 0.2s ease;
-    font-size: 1.6rem;
-    color: #fff;
-    padding: 0.36em 2em; 
-    border-radius: 5px;
-    background: abstracts.$secondary-bg-color;
+%btn-shared {
+  transition: background 0.2s ease;
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 0.36em 2em;
+  border-radius: 5px;
+  background: abstracts.$secondary-bg-color;
 }
 
-.btn{
+.btn {
+  @extend %btn-shared;
+  margin-bottom: 3rem;
+
+  &-transparent {
     @extend %btn-shared;
-    margin-bottom: 3rem;
-    &-transparent{
-        @extend %btn-shared;
-        background: transparent;
-        border: 2px solid rgb(180, 180, 180);
-        padding: 0.36em 1em; 
+    background: transparent;
+    border: 2px solid rgb(180, 180, 180);
+    padding: 0.33em 2em;
 
-        &:hover{
-            background:#b79d80;
+    &:hover {
+      background: #b79d80;
+    }
+  }
+
+  &-card {
+    @extend %btn-shared;
+    background: transparent;
+    border: 2px solid rgb(180, 180, 180);
+    color: abstracts.$card-color;
+    padding: 0.36em 3em;
+    letter-spacing: 2px;
+    &:hover {
+      background: #334d8a62;
+    }
+  }
+  &:hover {
+    background: #334d8a;
+  }
+
+  &-submit {
+    @extend %btn-shared;
+    width: 100%;
+    background: transparent;
+    border: 2px solid rgb(180, 180, 180);
+    color: abstracts.$card-color;
+    padding: 0.73em 3em;
+    margin-bottom: 5rem;
+    letter-spacing: 2px;
+    font-size: 1.7rem;
+    &:hover {
+      background: #b79d80;
+      color: white;
+    }
+  }
+}
+
+//====================================//
+//-----------Media Queries-----------//
+//==================================//
+
+// Large Breakpoint Styling
+@media screen and (max-width: 1053px) and (min-width:992px){
+    .btn {
+        @extend %btn-shared;
+      
+      
+        &-transparent-services {
+          padding: 0.33em 1.8em;
+
         }
     }
 
-    &-card{
-        @extend %btn-shared;
-        background: transparent;
-        border: 2px solid rgb(180, 180, 180);
-        color: abstracts.$card-color;
-        padding: 0.36em 3em; 
-        letter-spacing: 2px;
-        &:hover{
-            background:#334d8a62;
-        }
-    }
-    &:hover{
-        background:#334d8a;
-    }
 }

@@ -1,165 +1,260 @@
 @use "../abstracts";
 
-
-.container{
-    margin-inline: auto;
-    padding-inline: 2.7rem;
+.container {
+  margin-inline: auto;
+  padding-inline: 2.7rem;
 }
 
 
+.swiper{
+  width: 100%;
+}
 
-
-
-
+.swiper-wrapper{
+  
+}
 
 //=======================//
-//--Sub-heading classes--// 
+//--Sub-heading classes--//
 //=======================//
 
-
-
-.info__text-content{
-    padding: 5rem 4rem;
-  }
-
+.info__text-content {
+  padding: 5rem 4rem;
+}
 
 //Underline on the sub-headings
 
-.section-title{
-    font-size: 2.8rem;
-    text-transform: uppercase;
-    color: abstracts.$sub-heading-color;
-    position: relative;
-    margin-bottom: 2rem;
-    display: inline-block;
-   
-    &::before{
-        content: "";
-        background: abstracts.$sub-heading-color;
-        width: 100%;
-        height: 8px;
-        position: absolute;
-        top: 90%;
-        
-    }
+.section-title {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  color: abstracts.$sub-heading-color;
+  position: relative;
+  margin-bottom: 2rem;
+  display: inline-block;
 
+  &::before {
+    content: "";
+    background: abstracts.$sub-heading-color;
+    width: 100%;
+    height: 8px;
+    position: absolute;
+    top: 90%;
+  }
 }
-
-
 
 //======================//
-//-- Paragraph classes--// 
+//-- Paragraph classes--//
 //======================//
 
-.p-style{
-    color:abstracts.$text-body-color;
-    letter-spacing: 1px;
-    line-height: 2;
-    font-size: 1.7rem;
+.p-style {
+  color: abstracts.$text-body-color;
+  letter-spacing: 1px;
+  line-height: 2;
+  font-size: 1.7rem;
 }
-
-
 
 //=======================//
-//--Section Block class--// 
+//--Section Block class--//
 //=======================//
 
-//This is block on the story and inspiration section 
+//This is block on the story and inspiration section
 
-.section-block{
-    position: relative;
-    &::after{
-        content: "";
-        background: #ffd6a508;
-        width: 75px;
-        max-height: 400px;
-        height: 100%;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        position: absolute;
-
-    }
-    
-    &-light-sm{
-        position: relative;
-        &::after{
-            content: "";
-            background: #ffd6a508;
-            width: 9px;
-            height: 400px;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            position: absolute;
-    
-        }
-    }
-
-    &-light-md{
-        position: relative;
-        &::after{
-            content: "";
-            background: #ffd6a508;
-            width: 90px;
-            height: 35px;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            position: absolute;
-    
-        }
-    }
-
-    &-light-lg{
-        position: relative;
-        &::after{
-            content: "";
-            background: #ffd6a508;
-            width: 94px;
-            height: 490px;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            position: absolute;
-    
-        }
-    }
-   
-}
-
-//==============//
-//--JS classes--// 
-//==============//
-
-// Used to remove the margin on the header element when it scroll down. 
-.active{
-    margin: 0;
-}
-
-.navbar-active{
-    transform: translateX(0);
-}
-
-.no-scroll{
-    overflow-y: hidden;
-}
-
-.appear{
-    visibility: visible;
-    opacity: 1 ;
-    left: 50%;
+.section-block {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    background: #ffd6a508;
+    width: 7.5rem;
+    max-height: 40rem;
+    height: 100%;
+    right: 0;
     top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+  }
+
+  &-light-sm {
+    position: relative;
+
+    &::after {
+      content: "";
+      background: #ffd6a508;
+      width: 9px;
+      height: 400px;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+    }
+  }
+
+  &-light-lg {
+    overflow: hidden;
+    position: relative;
+    &::after {
+      content: "";
+      background: #ffd6a508;
+      width: 94px;
+      height: 490px;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+    }
+  }
+}
+
+//==============//
+//--JS classes--//
+//==============//
+
+// Used to remove the margin on the header element when it scroll down.
+.active {
+  margin: 0;
+}
+
+.navbar-active {
+  transform: translateX(0);
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+
+.appear {
+  visibility: visible;
+  opacity: 1;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
 .appearTwo {
-    visibility: visible !important;
-    opacity: 1 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 // Background Change
 
-.background-change{
-    background-color: abstracts.$primary-bg-color;
+.background-change {
+  background-color: abstracts.$primary-bg-color;
 }
+
+// Large Breakpoint Styling
+@media screen and (min-width: abstracts.$breakpoint-lg) {
+  .container {
+    margin-inline: auto;
+    padding-inline: 2.7rem;
+    max-width: 1400px;
+  }
+}
+
+// X-large Breakpoint Styling
+@media screen and (min-width: abstracts.$breakpoint-xl) {
+}
+
+//====================================//
+//-----------Media Queries-----------//
+//==================================//
+
+@media screen and (min-width: abstracts.$breakpoint-lg) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  //=======================//
+  //--Section Block class--//
+  //=======================//
+
+  //This is block on the story and inspiration section
+
+  .section-block {
+    &::after {
+      display: none;
+    }
+  }
+  .section-block-light-lg {
+    &::after {
+      display: none;
+    }
+  }
+
+  .main-section-block {
+    position: relative;
+    overflow: initial;
+
+    &::after {
+      content: "";
+      background: #ffd6a508;
+      width: 34rem;
+      max-height: initial;
+      height: 70rem;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+    }
+
+    &-left {
+      position: relative;
+      overflow: initial;
+
+      &::after {
+        content: "";
+        background: #ffd6a508;
+        width: 34rem;
+        max-height: initial;
+        height: 58rem;
+        right: initial;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+      }
+    }
+  }
+
+  //======================//
+  //-- Paragraph classes--//
+  //======================//
+
+  .p-style {
+    color: abstracts.$text-body-color;
+    letter-spacing: 1px;
+    line-height: 2;
+    font-size: 2rem;
+  }
+
+//=======================//
+//--Sub-heading classes--//
+//=======================//
+
+.info__text-content {
+    align-self: center;
+    padding: 5rem 4rem;
+  }
+  
+  //Underline on the sub-headings
+  
+  .section-title {
+    font-size: 5rem;
+  
+    &::before {
+      content: "";
+      background: abstracts.$sub-heading-color;
+      width: 100%;
+      height: 8px;
+      position: absolute;
+      top: 90%;
+    }
+  }
+
+
+
+
+
+}
+
+

@@ -1,0 +1,215 @@
+@use "../abstracts";
+@use "../base";
+
+.form {
+  padding-inline: 3rem;
+  text-align: center;
+  background: linear-gradient(
+      90deg,
+      rgba(50, 61, 88, 0.9444911753764006) 100%,
+      rgba(50, 61, 88, 1) 100%
+    ),
+    url(../../../assets/images/form-bg.jpg) no-repeat center center/ cover;
+
+  .section-title {
+    margin-block: 4rem 2.8rem;
+  }
+}
+
+.contact-info {
+  color: #fff;
+  font-weight: 200;
+  letter-spacing: 2px;
+  font-size: 1.55rem;
+
+  &__email,
+  &__phone,
+  &__social-media {
+    margin-bottom: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__email {
+    .icon {
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+  }
+  &__phone {
+    .icon {
+      font-size: 1.9rem;
+      margin-right: 0.75rem;
+    }
+  }
+  &__social-media {
+    display: inline-block;
+    font-size: 2.4rem;
+    margin-bottom: 6rem;
+    .icon {
+      margin-inline: 1.2rem;
+      cursor: pointer;
+      transition: color 0.4s ease;
+
+      &:hover {
+        color: abstracts.$heading-color;
+      }
+    }
+  }
+}
+
+.form__content {
+  .form__input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 4rem;
+
+    label {
+      order: 1;
+      display: block;
+      text-align: left;
+      font-family: base.$font-face-title;
+      font-size: 2.2rem;
+      color: abstracts.$heading-color;
+      letter-spacing: 1px;
+      margin-bottom: 3rem;
+      transition: color 0.5s ease, text-shadow 0.6s ease;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+    }
+
+    input {
+      order: 2;
+      border: none;
+      border-bottom: 1.8px solid rgba(255, 255, 255, 0.51);
+      background: transparent;
+      font-size: 2rem;
+      color: abstracts.$heading-color;
+      font-family: base.$font-face-title;
+      outline: none;
+      display: inline-block;
+    }
+
+    .input-class {
+      position: relative;
+      &:focus + .label-class {
+        color: rgb(223, 223, 223);
+        text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.418);
+      }
+
+      &:focus + .label-class::after,
+      &:valid .label-class::after {
+        transform: translateX(0%);
+      }
+    }
+
+    .label-class {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -1px;
+        left: 0px;
+        border-bottom: 4px solid abstracts.$heading-color;
+        z-index: 1;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+      }
+    }
+  }
+}
+
+.form__textarea {
+  position: relative;
+  
+
+  textarea {
+    padding: 0.5rem;
+    order: 2;
+    height: 40rem;
+    background: rgba(196, 196, 196, 0.127);
+    border: 2px solid rgba(255, 255, 255, 0.51);
+    font-size: 2rem;
+    font-family: base.$font-face-title;
+    color: abstracts.$heading-color;
+    outline: none;
+  }
+
+  .textarea-class:focus ~ .textarea-label-class {
+    color: rgb(223, 223, 223);
+    text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.418);
+  }
+
+  .textarea-line {
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    top: 69px;
+    left: 0;
+    background-color: abstracts.$heading-color;
+  }
+}
+
+#textarea-line {
+  &-1 {
+    top:65px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  &-2 {
+    height: 3px;
+    top: 64px;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+  }
+  &-3 {
+    left: 98.6%;
+    width:4px;
+    top: 64px;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+  }
+  &-4 {
+    height: 3px;
+    width: 100%;
+    top: 99.4%;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+  }
+}
+
+.textarea-class:focus ~ #textarea-line-1{
+  transform: translateY(0%);
+}
+
+.textarea-class:focus ~ #textarea-line-2{
+  transform: translateX(0%);
+}
+.textarea-class:focus ~ #textarea-line-3{
+  transform: translateY(0%);
+}
+
+.textarea-class:focus ~ #textarea-line-4{
+  transform: translateX(0%);
+}
+
+// position: absolute;
+// width: 3px;
+// height: 100%;
+// top: 69px;
+// left: 0;
+// background-color: abstracts.$heading-color;
+
+
+
+//====================================//
+//-----------Media Queries-----------//
+//==================================//

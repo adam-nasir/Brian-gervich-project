@@ -1,0 +1,30 @@
+@use "../abstracts";
+
+
+//====================================//
+//-----------Media Queries-----------//
+//==================================//
+
+
+// Large Breakpoint Styling 
+@media screen and (min-width: abstracts.$breakpoint-lg) {
+    .services{
+        background: linear-gradient(90deg, rgba(50, 61, 88, 0.922) 100%, rgba(0,0,0,0.9977124638918067) 100%), url("../../../assets/images/service-bg.jpg") no-repeat center center/ cover;
+    }
+
+    .service-container{
+        max-width: 1440px;
+        margin-inline: auto;
+        padding: 8rem 6rem;
+    }
+
+    .services__content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+    }
+
+  
+}
+  

@@ -10,7 +10,7 @@
   width: 100%;
   position: relative;
 
-  &::after{
+  &::after {
     content: "";
     position: absolute;
     top: 0;
@@ -22,11 +22,50 @@
 }
 
 .inspiration__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(92%) contrast(92%);
+}
+
+
+
+//====================================//
+//-----------Media Queries-----------//
+//==================================//
+
+// Large Breakpoint Styling
+@media screen and (min-width: abstracts.$breakpoint-lg) {
+  .inspiration {
+    height: 100vh;
+  }
+
+  .inspiration__img-content {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.219);
+    }
+  }
+
+  .inspiration__img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    filter: brightness(92%) contrast(92%);
   }
-  
-  
- 
-  
+
+  .my-inspiration__text-content {
+    right: -20rem;
+    max-width: 65.41rem;
+    z-index: 1;
+  }
+}

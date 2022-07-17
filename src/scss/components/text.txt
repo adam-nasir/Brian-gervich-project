@@ -1,0 +1,25 @@
+@media screen and (min-width: abstracts.$breakpoint-med) {
+
+  
+  
+  
+}
+
+// Large Breakpoint Styling 
+@media screen and (min-width: abstracts.$breakpoint-lg) {
+
+  .mobile-menu {
+    display: none;
+  }
+  
+
+
+}
+
+// X-large Breakpoint Styling 
+@media screen and (min-width: abstracts.$breakpoint-xl) {
+
+  
+  
+  
+}

@@ -1,4 +1,6 @@
 @use "../abstracts";
+@use "../base";
+
 
 .main-header {
   position: fixed;
@@ -58,4 +60,95 @@ transition: all 0.5s ease;
   font-size: 3rem;
   padding: 0.45rem 0;
   color: #fff;
+  transition: color 0.4s ease;
+
+  &:hover{
+    color: abstracts.$heading-color;
+  }
+}
+
+
+
+
+
+//====================================//
+//-----------Media Queries-----------//
+//==================================//
+
+// Med Breakpoint Styling 
+
+@media screen and (min-width: abstracts.$breakpoint-med) {
+
+  
+  
+  
+}
+
+// Large Breakpoint Styling 
+@media screen and (min-width: abstracts.$breakpoint-lg) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  .navbar__menu {
+    position: static;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    width: initial;
+    z-index: 99999;
+    visibility: visible;
+    opacity: 1;
+    
+  }
+
+  .navbar__list {
+    position: initial;
+    left: initial;
+    top: initial;
+    transform: initial;
+    opacity: 1;
+    visibility: visible;
+    transition: initial;
+    display: flex;
+    
+ 
+  }
+
+  .navbar__list-item {
+    margin-inline: 0.4rem;
+    display: initial;
+    justify-content: initial;
+    align-items: initial;
+  }
+  
+  .navbar__list-link {
+    display: inline-block;
+    font-size: 1.8rem;
+   letter-spacing: 0.1rem;
+    padding: 0 0.6rem;
+    font-family: base.$font-face-title;
+    color: #e7ceb2;
+   
+    transition: color 0.3s ease;
+    
+
+    &:hover{
+      color: #fff;
+    }
+  }
+  
+}
+
+
+// X-large Breakpoint Styling 
+@media screen and (min-width: abstracts.$breakpoint-xl) {
+
+  
+  
+  
 }
