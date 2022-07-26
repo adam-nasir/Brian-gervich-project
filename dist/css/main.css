@@ -151,7 +151,7 @@ p {
 
   .navbar__list-link {
     display: inline-block;
-    font-size: 1.8rem;
+    font-size: 2.1rem;
     letter-spacing: 0.1rem;
     padding: 0 0.6rem;
     font-family: "Times New Roman", Times, serif;
@@ -353,11 +353,16 @@ p {
   transition: transform 0.4s ease;
 }
 #textarea-line-3 {
-  left: 98.6%;
+  left: 99.4%;
   width: 4px;
   top: 64px;
   transform: translateY(100%);
   transition: transform 0.5s ease;
+}
+@media screen and (max-width: 24.75em) {
+  #textarea-line-3 {
+    left: 98.9%;
+  }
 }
 #textarea-line-4 {
   height: 3px;
@@ -383,6 +388,69 @@ p {
   transform: translateX(0%);
 }
 
+@media screen and (min-width: 45em) {
+  .form {
+    margin-inline: auto;
+    max-width: 105rem;
+  }
+  .form .section-title {
+    font-size: 3.8rem;
+  }
+  .form .all-form-content {
+    max-width: 65rem;
+    margin: auto;
+  }
+
+  .contact-info {
+    color: #fff;
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-size: 2rem;
+  }
+  .contact-info__email .icon {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+  }
+  .contact-info__phone .icon {
+    font-size: 2.3rem;
+    margin-right: 1rem;
+  }
+  .contact-info__social-media {
+    display: inline-block;
+    font-size: 3rem;
+    margin-bottom: 6rem;
+  }
+
+  .form__content .form__input label {
+    font-size: 2.5rem;
+  }
+
+  #textarea-line-1 {
+    top: 70px;
+  }
+  #textarea-line-2 {
+    top: 70px;
+  }
+  #textarea-line-3 {
+    left: 99.4%;
+    width: 4px;
+    top: 70px;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+  }
+  #textarea-line-4 {
+    height: 3px;
+    width: 100%;
+    top: 99.4%;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+  }
+}
+@media screen and (min-width: 62em) {
+  .form .section-title {
+    margin-block: 4rem 2.8rem;
+  }
+}
 .btn-submit, .btn-card, .btn-transparent, .btn {
   transition: background 0.2s ease;
   font-size: 1.6rem;
@@ -431,9 +499,23 @@ p {
   color: white;
 }
 
-@media screen and (max-width: 1053px) and (min-width: 992px) {
+@media screen and (max-width: 1054px) and (min-width: 992px) {
   .btn-transparent-services {
     padding: 0.33em 1.8em;
+  }
+}
+@media screen and (min-width: 160em) {
+  .btn {
+    font-size: 2.1rem;
+  }
+  .btn-transparent {
+    font-size: 2.1rem;
+  }
+  .btn-card {
+    font-size: 2.1rem;
+  }
+  .btn-submit {
+    font-size: 1.7rem;
   }
 }
 .card {
@@ -499,43 +581,51 @@ p {
 .testimonies__card-accent-color {
   background-color: #323d58;
 }
-.testimonies__card__review {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2.5rem;
-}
-.testimonies__card__review .star {
-  width: 27px;
-  margin-inline: 0.2rem;
-}
 .testimonies__card__title {
   text-transform: uppercase;
   color: #ffcd92;
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-}
-.testimonies__card__title .quotes {
-  color: rgba(255, 255, 255, 0.416);
-  font-size: 1.4rem;
-}
-.testimonies__card__title .quotes-right {
-  transform: translate(0, -11px);
-}
-.testimonies__card__title .quotes-left {
-  transform: translate(3px, -10.5px);
+  font-size: 2.4rem;
+  margin-bottom: 1.6rem;
+  letter-spacing: 1px;
 }
 .testimonies__card__description {
   font-weight: 200;
   color: #ffffffb8;
   line-height: 3.285rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   letter-spacing: 0.05rem;
   margin-bottom: 1.5rem;
+  display: flex;
 }
-.testimonies__card__person-info {
+.testimonies__card__description .start-quote,
+.testimonies__card__description .end-quote {
+  opacity: 0.4;
+  position: relative;
+  z-index: -1;
+}
+.testimonies__card__description .start-quote::after {
+  content: "";
+  width: 6.3rem;
+  height: 4.8rem;
+  top: -9px;
+  position: absolute;
+  background: url("../../../assets/start-quote-mark.svg") no-repeat center center/cover;
+  margin-left: -8px;
+}
+.testimonies__card__description .end-quote::after {
+  content: "";
+  width: 6.3rem;
+  height: 4.8rem;
+  top: -5px;
+  position: absolute;
+  background: url("../../../assets/end-quote-mark.svg") no-repeat center center/cover;
+  margin-left: -5.7rem;
+}
+.testimonies__card__person-info-mobile {
+  margin-bottom: 2rem;
   text-align: center;
 }
-.testimonies__card__person-info img {
+.testimonies__card__person-info-mobile img {
   object-fit: cover;
   width: 11rem;
   height: 11rem;
@@ -545,7 +635,7 @@ p {
   margin-bottom: 1rem;
 }
 
-.person-info__description {
+.person-info__description-mobile {
   font-style: italic;
   font-weight: 600;
   font-size: 1.45rem;
@@ -555,13 +645,17 @@ p {
   letter-spacing: 0.05rem;
   text-transform: uppercase;
 }
-.person-info__description span {
+.person-info__description-mobile span {
   display: block;
   color: rgba(255, 255, 255, 0.53);
   font-style: italic;
   font-size: 1.4rem;
   padding-bottom: 1rem;
   text-transform: capitalize;
+}
+
+.person-info__description {
+  display: initial;
 }
 
 @media screen and (min-width: 45em) {
@@ -572,46 +666,29 @@ p {
   .testimonies__card-accent-color {
     background-color: #323d58;
   }
-  .testimonies__card__review {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2.5rem;
-  }
-  .testimonies__card__review .star {
-    width: 27px;
-    margin-inline: 0.2rem;
-  }
   .testimonies__card__title {
     text-transform: uppercase;
     color: #ffcd92;
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-  }
-  .testimonies__card__title .quotes {
-    color: rgba(255, 255, 255, 0.416);
-    font-size: 1.4rem;
-  }
-  .testimonies__card__title .quotes-right {
-    transform: translate(0, -11px);
-  }
-  .testimonies__card__title .quotes-left {
-    transform: translate(3px, -10.5px);
+    font-size: 2.4rem;
+    margin-bottom: 1.3rem;
   }
   .testimonies__card__description {
     font-weight: 200;
     color: #ffffffb8;
-    line-height: 3.285rem;
-    font-size: 1.8rem;
+    line-height: 3.8rem;
+    font-size: 2rem;
     letter-spacing: 0.05rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    margin-inline: auto;
+    max-width: 56rem;
   }
   .testimonies__card__person-info {
     text-align: center;
   }
   .testimonies__card__person-info img {
     object-fit: cover;
-    width: 11rem;
-    height: 11rem;
+    width: 20rem;
+    height: 20rem;
     margin-inline: auto;
     border-radius: 50%;
     border: 6px solid #485269;
@@ -621,26 +698,19 @@ p {
   .person-info__description {
     font-style: italic;
     font-weight: 600;
-    font-size: 1.45rem;
+    font-size: 2rem;
     line-height: 1.9rem;
     color: #fff;
     text-align: center;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
   }
-  .person-info__description span {
-    display: block;
-    color: rgba(255, 255, 255, 0.53);
-    font-style: italic;
-    font-size: 1.4rem;
-    padding-bottom: 1rem;
-    text-transform: capitalize;
-  }
 }
 @media screen and (min-width: 62em) {
   .card {
-    max-width: 35rem;
+    max-width: 30rem;
     padding: 7rem 4rem 8rem 4rem;
+    box-shadow: 1.3px 1.1px 2.2px -1px rgba(0, 0, 0, 0.07), 2.7px 2.4px 5.3px -1px rgba(0, 0, 0, 0.046), 4.4px 3.9px 10px -1px rgba(0, 0, 0, 0.032), 6.9px 6.1px 17.9px -1px rgba(0, 0, 0, 0.025), 11.6px 10.3px 33.4px -1px rgba(0, 0, 0, 0.021), 27px 24px 80px -1px rgba(0, 0, 0, 0.016);
   }
   .card img {
     width: 16rem;
@@ -648,18 +718,137 @@ p {
     margin-bottom: 2.3rem;
   }
   .card .card-title {
-    font-size: 3.5rem;
+    font-size: 3.7rem;
     margin-bottom: 2.5rem;
+    line-height: 3.7rem;
+    letter-spacing: 2px;
   }
   .card .card-description {
+    font-size: 1.7rem;
     margin-top: 1.5rem;
     line-height: 123.5%;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
   }
 
   #card-1,
 #card-3 {
     background-color: #243661;
+  }
+
+  .testimonies__card__title {
+    font-size: 3.4rem;
+    margin-bottom: 1.3rem;
+  }
+  .testimonies__card__description {
+    line-height: 4.2rem;
+    font-size: 2.3rem;
+    margin-bottom: 2.3rem;
+    margin-inline: auto;
+    max-width: 73rem;
+  }
+  .testimonies__card__person-info-mobile {
+    text-align: center;
+  }
+  .testimonies__card__person-info-mobile img {
+    object-fit: cover;
+    width: 20rem;
+    height: 20rem;
+    margin-inline: auto;
+    border-radius: 50%;
+    border: 6px solid #485269;
+    margin-bottom: 2rem;
+  }
+
+  .person-info__description-mobile {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.9rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+  }
+  .person-info__description-mobile span {
+    display: block;
+    color: rgba(255, 255, 255, 0.53);
+    font-style: italic;
+    font-size: 1.5rem;
+    padding-top: 0.9rem;
+    padding-bottom: initial;
+    text-transform: capitalize;
+  }
+}
+@media screen and (min-width: 160em) {
+  .card {
+    max-width: 40rem;
+    padding: 7rem 4rem 8rem 4rem;
+  }
+  .card img {
+    width: 20rem;
+    margin-bottom: 2.5rem;
+  }
+  .card .card-title {
+    font-size: 4.1rem;
+    margin-bottom: 3rem;
+    line-height: 4rem;
+    letter-spacing: 2px;
+  }
+  .card .card-description {
+    font-size: 2.05rem;
+    margin-top: 2.5rem;
+    line-height: 130%;
+    margin-bottom: 4rem;
+  }
+
+  #card-1,
+#card-3 {
+    background-color: #243661;
+  }
+
+  .testimonies__card__title {
+    font-size: 4rem;
+    margin-bottom: 1.3rem;
+    padding-top: 3rem;
+  }
+  .testimonies__card__description {
+    line-height: 5rem;
+    font-size: 2.5rem;
+    margin-bottom: 2.3rem;
+    margin-inline: auto;
+    max-width: 90rem;
+  }
+  .testimonies__card__person-info-mobile {
+    text-align: center;
+  }
+  .testimonies__card__person-info-mobile img {
+    object-fit: cover;
+    width: 20rem;
+    height: 20rem;
+    margin-inline: auto;
+    border-radius: 50%;
+    border: 6px solid #485269;
+    margin-bottom: 2rem;
+  }
+
+  .person-info__description-mobile {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.9rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+  }
+  .person-info__description-mobile span {
+    display: block;
+    color: rgba(255, 255, 255, 0.53);
+    font-style: italic;
+    font-size: 1.5rem;
+    padding-top: 0.9rem;
+    padding-bottom: initial;
+    text-transform: capitalize;
   }
 }
 .hero {
@@ -670,6 +859,11 @@ p {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-height: 84.375em) {
+  .hero {
+    min-height: 100%;
+  }
+}
 
 .hero__content {
   padding-top: 38%;
@@ -677,6 +871,11 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media screen and (min-height: 84.375em) {
+  .hero__content {
+    padding-block: 25rem 20rem;
+  }
 }
 
 .main__title {
@@ -769,13 +968,67 @@ p {
     margin-right: 2.5rem;
   }
 }
+@media screen and (min-width: 160em) {
+  .hero__content {
+    padding-block: 52rem 10rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 1px;
+  }
+
+  .main__title {
+    font-size: 14rem;
+    text-transform: uppercase;
+    text-align: left;
+    margin-inline: initial;
+    line-height: 0.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .main__subtitle {
+    font-size: 2.4rem;
+    margin-left: 1.4rem;
+  }
+
+  .description {
+    line-height: 1.5;
+    color: #d9d9d9;
+    max-width: 66rem;
+    margin-bottom: 4rem;
+    margin-left: 1.4rem;
+    font-size: 2.1rem;
+  }
+}
+@media screen and (min-height: 84.375em) {
+  .hero__content {
+    padding-block: 31rem 27rem;
+  }
+}
+
 .container {
   margin-inline: auto;
   padding-inline: 2.7rem;
 }
+@media screen and (min-width: 120em) {
+  .container {
+    max-width: 190.4rem;
+  }
+}
 
 .swiper {
   width: 100%;
+}
+
+.swiper-button-prev {
+  color: #d4e0ec;
+  top: 19rem;
+}
+
+.swiper-button-next {
+  color: #d4e0ec;
+  top: 19rem;
 }
 
 .info__text-content {
@@ -944,7 +1197,7 @@ p {
   }
 
   .section-title {
-    font-size: 5rem;
+    font-size: 3.8rem;
   }
   .section-title::before {
     content: "";
@@ -955,6 +1208,82 @@ p {
     top: 90%;
   }
 }
+@media screen and (min-width: 120em) {
+  .section-block::after {
+    display: none;
+  }
+
+  .section-block-light-lg::after {
+    display: none;
+  }
+
+  .main-section-block {
+    position: relative;
+    overflow: initial;
+  }
+  .main-section-block::after {
+    content: "";
+    background: #ffd6a508;
+    width: 34rem;
+    max-height: initial;
+    height: 140rem;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+  }
+  .main-section-block-left {
+    position: relative;
+    overflow: initial;
+  }
+  .main-section-block-left::after {
+    content: "";
+    background: #ffd6a508;
+    width: 34rem;
+    max-height: initial;
+    height: 120rem;
+    right: initial;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+  }
+
+  .p-style {
+    color: rgba(255, 252, 252, 0.78);
+    letter-spacing: 1px;
+    line-height: 2;
+    font-size: 2.3rem;
+  }
+
+  .info__text-content {
+    align-self: center;
+    padding: 5rem 4rem;
+  }
+
+  .section-title {
+    font-size: 6.4rem;
+  }
+  .section-title::before {
+    content: "";
+    background: #FFD7A5;
+    width: 100%;
+    height: 8px;
+    position: absolute;
+    top: 90%;
+  }
+}
+@media screen and (min-width: 120em) {
+  .container {
+    max-width: 190.4rem;
+  }
+}
+@media screen and (min-width: 160em) {
+  .container {
+    max-width: 240.4rem;
+  }
+}
+
 .about {
   background-color: #323d58;
 }
@@ -1001,6 +1330,17 @@ p {
     max-width: 62rem;
   }
 }
+@media screen and (min-width: 160em) {
+  .about__img-content {
+    height: 150rem;
+  }
+
+  .about__text-content {
+    order: 2;
+    right: 14.2rem;
+    max-width: 75rem;
+  }
+}
 .inspiration {
   background-color: #243661;
 }
@@ -1044,7 +1384,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.219);
+    background-color: rgba(0, 0, 0, 0.373);
   }
 
   .inspiration__img {
@@ -1060,9 +1400,27 @@ p {
     z-index: 1;
   }
 }
+@media screen and (min-width: 160em) {
+  .my-inspiration__text-content {
+    right: -16rem;
+    max-width: 76.4rem;
+    z-index: 1;
+  }
+}
+@media screen and (min-height: 84.375em) {
+  .inspiration {
+    height: 100%;
+  }
+}
+@media screen and (min-height: 84.375em) {
+  .inspiration .inspiration__img-content {
+    height: 100%;
+  }
+}
+
 @media screen and (min-width: 62em) {
   .services {
-    background: linear-gradient(90deg, rgba(50, 61, 88, 0.922) 100%, rgba(0, 0, 0, 0.9977124639) 100%), url("../../../assets/images/service-bg.jpg") no-repeat center center/cover;
+    background: linear-gradient(90deg, rgba(50, 61, 88, 0.932) 100%, rgba(0, 0, 0, 0.9977124639) 100%), url("../../../assets/images/service-bg.jpg") no-repeat center center/cover;
   }
 
   .service-container {
@@ -1075,7 +1433,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 5rem;
   }
 }
 .testimonies {
@@ -1089,6 +1447,7 @@ p {
 
 .contact {
   background-color: #243661;
+  padding-block: 7rem 6rem;
 }
 
 .footer {

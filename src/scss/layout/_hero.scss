@@ -14,6 +14,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include abstracts.min-height-breakpoint(abstracts.$height-breakpoint){
+    min-height: 100%;
+  }
 }
 
 .hero__content {
@@ -22,6 +26,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include abstracts.min-height-breakpoint(abstracts.$height-breakpoint){
+    padding-block: 25rem 20rem;
+  }
 }
 
 .main__title {
@@ -138,5 +146,50 @@
 }
 
 // X-large Breakpoint Styling
-@media screen and (min-width: abstracts.$breakpoint-xl) {
+@media screen and (min-width: abstracts.$breakpoint-xxl) {
+
+  .hero__content {
+    padding-block: 52rem 10rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 1px;
+  }
+
+  .main__title {
+    
+    font-size: 14rem;
+    text-transform: uppercase;
+    text-align: left;
+    margin-inline: initial;
+    line-height: 0.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .main__subtitle {
+    font-size: 2.4rem;
+    margin-left: 1.4rem;
+
+  }
+
+  .description {
+    line-height: 1.5;
+    color: #d9d9d9;
+    max-width: 66rem;
+    margin-bottom: 4rem;
+    margin-left: 1.4rem;
+    font-size: 2.1rem;
+    
+  }
+
 }
+
+
+
+.hero__content {
+  @include abstracts.min-height-breakpoint(abstracts.$height-breakpoint){
+    padding-block: 31rem 27rem;
+  }
+}
+

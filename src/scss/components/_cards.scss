@@ -1,7 +1,7 @@
 @use "../abstracts";
 
+ //===============The Service Card============//
 
-// These card the service cards
 .card {
   text-align: center;
   display: flex;
@@ -63,59 +63,68 @@
   background-color: abstracts.$secondary-bg-color;
 }
 
-//---Testinmonies Cards---//
+
+
+ //=================The Testimonies Cards==================//
 
 .testimonies__card {
   background-color: abstracts.$secondary-bg-color;
   padding: 4rem 4rem 2rem 4rem;
-  &-accent-color{
+  &-accent-color {
     background-color: abstracts.$primary-bg-color;
-  }
-
-
-  &__review {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2.5rem;
-
-    .star {
-      width: 27px;
-      margin-inline: 0.2rem;
-    }
   }
 
   &__title {
     text-transform: uppercase;
     color: #ffcd92;
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-    
-    .quotes {
-      color: rgba(255, 255, 255, 0.416);
-      font-size: 1.4rem;
-      
-
-      &-right{
-        
-        transform:translate(0, -11px);
-      }
-      &-left{
-        transform:translate(3px, -10.5px);
-      }
-
-      
-    }
+    font-size: 2.4rem;
+    margin-bottom: 1.6rem;
+    letter-spacing: 1px;
   }
   &__description {
     font-weight: 200;
     color: #ffffffb8;
     line-height: 3.285rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     letter-spacing: 0.05rem;
     margin-bottom: 1.5rem;
+    display: flex;
+
+    .start-quote,
+    .end-quote {
+      opacity: 0.4;
+      position: relative;
+      z-index: -1;
+    }
+    .start-quote {
+      &::after {
+        content: "";
+        width: 6.3rem;
+        height: 4.8rem;
+        top: -9px;
+        position: absolute;
+        background: url("../../../assets/start-quote-mark.svg") no-repeat center
+          center / cover;
+        margin-left: -8px;
+      }
+    }
+    .end-quote {
+      &::after {
+        content: "";
+        width: 6.3rem;
+        height: 4.8rem;
+        top: -5px;
+        position: absolute;
+        background: url("../../../assets/end-quote-mark.svg") no-repeat center
+          center/cover;
+        margin-left: -5.7rem;
+      }
+    }
   }
 
-  &__person-info {
+
+  &__person-info-mobile {
+    margin-bottom: 2rem;
     text-align: center;
     img {
       object-fit: cover;
@@ -130,90 +139,71 @@
   }
 }
 
-.person-info__description {
-   font-style: italic;
-   font-weight: 600;
-   font-size: 1.45rem;
-   line-height: 1.9rem;
-   color:#fff;
-   
-   text-align: center;
-   letter-spacing: 0.05rem;
-   text-transform: uppercase;
+.person-info__description-mobile {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.45rem;
+  line-height: 1.9rem;
+  color: #fff;
 
+  text-align: center;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
 
-  span{
-   display: block;
-   color: rgba(255, 255, 255, 0.53);
-   font-style: italic;
-   font-size: 1.4rem;
-   padding-bottom: 1rem;
-   text-transform: capitalize;
+  span {
+    display: block;
+    color: rgba(255, 255, 255, 0.53);
+    font-style: italic;
+    font-size: 1.4rem;
+    padding-bottom: 1rem;
+    text-transform: capitalize;
   }
 }
 
+.person-info__description {
+  display: initial;
+}
 
 //====================================//
 //-----------Media Queries-----------//
 //==================================//
 
-@media screen and (min-width: abstracts.$breakpoint-med){
+//===================Medium Breakpoint (45em) =======================//
+@media screen and (min-width: abstracts.$breakpoint-med) {
+
+  //=================The Testimonies Cards==================//
   .testimonies__card {
     background-color: abstracts.$secondary-bg-color;
     padding: 4rem 4rem 2rem 4rem;
-    &-accent-color{
+    &-accent-color {
       background-color: abstracts.$primary-bg-color;
     }
-  
-  
-    &__review {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2.5rem;
-  
-      .star {
-        width: 27px;
-        margin-inline: 0.2rem;
-      }
-    }
-  
+
     &__title {
       text-transform: uppercase;
       color: #ffcd92;
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-      
-      .quotes {
-        color: rgba(255, 255, 255, 0.416);
-        font-size: 1.4rem;
-        
-  
-        &-right{
-          
-          transform:translate(0, -11px);
-        }
-        &-left{
-          transform:translate(3px, -10.5px);
-        }
-  
-        
-      }
+      font-size: 2.4rem;
+      margin-bottom: 1.3rem;
+
+
     }
     &__description {
       font-weight: 200;
       color: #ffffffb8;
-      line-height: 3.285rem;
-      font-size: 1.8rem;
+      line-height: 3.8rem;
+      font-size: 2rem;
       letter-spacing: 0.05rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      margin-inline: auto;
+      max-width: 56rem;
     }
-  
+
     &__person-info {
       text-align: center;
       img {
         object-fit: cover;
-        width: 11rem;
-        height: 11rem;
+        width: 20rem;
+        height: 20rem;
         margin-inline: auto;
         // height: 10rem;
         border-radius: 50%;
@@ -222,68 +212,223 @@
       }
     }
   }
-  
+
   .person-info__description {
-     font-style: italic;
-     font-weight: 600;
-     font-size: 1.45rem;
-     line-height: 1.9rem;
-     color:#fff;
-     
-     text-align: center;
-     letter-spacing: 0.05rem;
-     text-transform: uppercase;
-  
-  
-    span{
-     display: block;
-     color: rgba(255, 255, 255, 0.53);
-     font-style: italic;
-     font-size: 1.4rem;
-     padding-bottom: 1rem;
-     text-transform: capitalize;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.9rem;
+    color: #fff;
+
+    text-align: center;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+
+
+
+    .name{
+      
+    }
+  }
+}
+
+//===================Large Breakpoint (62em)=======================//
+@media screen and (min-width: abstracts.$breakpoint-lg) {
+
+ //===============The Service Card============//
+ 
+  .card {
+    max-width: 30rem;
+    padding: 7rem 4rem 8rem 4rem;
+    box-shadow: 1.3px 1.1px 2.2px -1px rgba(0, 0, 0, 0.07),
+      2.7px 2.4px 5.3px -1px rgba(0, 0, 0, 0.046),
+      4.4px 3.9px 10px -1px rgba(0, 0, 0, 0.032),
+      6.9px 6.1px 17.9px -1px rgba(0, 0, 0, 0.025),
+      11.6px 10.3px 33.4px -1px rgba(0, 0, 0, 0.021),
+      27px 24px 80px -1px rgba(0, 0, 0, 0.016);
+
+    img {
+      width: 16rem;
+      height: auto;
+      margin-bottom: 2.3rem;
+    }
+
+    .card-title {
+      font-size: 3.7rem;
+      margin-bottom: 2.5rem;
+      line-height: 3.7rem;
+      letter-spacing: 2px;
+    }
+
+    .card-description {
+      font-size: 1.7rem;
+      margin-top: 1.5rem;
+      line-height: 123.5%;
+      margin-bottom: 3rem;
     }
   }
 
-}
+  #card-1,
+  #card-3 {
+    background-color: abstracts.$secondary-bg-color;
+  }
 
 
+//=================The Testimonies Cards==================//
+.testimonies__card {
 
 
-
-// Large Breakpoint Styling 
-@media screen and (min-width: abstracts.$breakpoint-lg) {
-
-// These card the service cards
-.card {
-  max-width: 35rem;
-  padding: 7rem 4rem 8rem 4rem;
+  &__title {
+    font-size: 3.4rem;
+    margin-bottom: 1.3rem;
 
 
-  img {
-    width: 16rem;
-    height: auto;
+  }
+  &__description {
+    line-height: 4.2rem;
+    font-size: 2.3rem;
     margin-bottom: 2.3rem;
-  
+    margin-inline: auto;
+    max-width: 73rem;
   }
 
-  .card-title {
-    font-size: 3.5rem;
-    margin-bottom: 2.5rem;
-  
-  }
-
-  .card-description {
-    margin-top: 1.5rem;
-    line-height: 123.5%;
-    margin-bottom: 2.5rem;
+  &__person-info-mobile{
+    text-align: center;
+   
+    img {
+      object-fit: cover;
+      width: 20rem;
+      height: 20rem;
+      margin-inline: auto;
+      // height: 10rem;
+      border-radius: 50%;
+      border: 6px solid rgba(72, 82, 105, 1);
+      margin-bottom: 2rem;
+    }
   }
 }
 
-#card-1,
-#card-3 {
-  background-color: abstracts.$secondary-bg-color;
+.person-info__description-mobile{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.9rem;
+  color: #fff;
+
+  text-align: center;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+
+  span {
+    display: block;
+    color: rgba(255, 255, 255, 0.53);
+    font-style: italic;
+    font-size: 1.5rem;
+    padding-top: 0.9rem;
+    padding-bottom: initial;
+    text-transform: capitalize;
+  }
+
 }
 
 
 }
+//===================XX-Large Breakpoint (120em)=======================//
+@media screen and (min-width: abstracts.$breakpoint-xxl) {
+
+ //===============The Service Card============//
+ 
+  .card {
+    max-width: 40rem;
+    padding: 7rem 4rem 8rem 4rem;
+
+
+    img {
+      width: 20rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card-title {
+      font-size: 4.1rem;
+      margin-bottom: 3rem;
+      line-height: 4rem;
+      letter-spacing: 2px;
+    }
+
+    .card-description {
+      font-size: 2.05rem;
+      margin-top: 2.5rem;
+      line-height: 130%;
+      margin-bottom: 4rem;
+    }
+  }
+
+  #card-1,
+  #card-3 {
+    background-color: abstracts.$secondary-bg-color;
+  }
+
+
+//=================The Testimonies Cards==================//
+.testimonies__card {
+
+
+  &__title {
+    font-size: 4rem;
+    margin-bottom: 1.3rem;
+    padding-top: 3rem;
+
+
+  }
+  &__description {
+    line-height: 5rem;
+    font-size: 2.5rem;
+    margin-bottom: 2.3rem;
+    margin-inline: auto;
+    max-width: 90rem;
+  }
+
+  &__person-info-mobile{
+    text-align: center;
+   
+    img {
+      object-fit: cover;
+      width: 20rem;
+      height: 20rem;
+      margin-inline: auto;
+      // height: 10rem;
+      border-radius: 50%;
+      border: 6px solid rgba(72, 82, 105, 1);
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.person-info__description-mobile{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.9rem;
+  color: #fff;
+
+  text-align: center;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+
+  span {
+    display: block;
+    color: rgba(255, 255, 255, 0.53);
+    font-style: italic;
+    font-size: 1.5rem;
+    padding-top: 0.9rem;
+    padding-bottom: initial;
+    text-transform: capitalize;
+  }
+
+}
+
+
+}
+
+
+

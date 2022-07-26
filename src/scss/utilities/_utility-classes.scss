@@ -3,7 +3,16 @@
 .container {
   margin-inline: auto;
   padding-inline: 2.7rem;
+
+  @include abstracts.min-breakpoint(abstracts.$breakpoint-xl){
+    max-width: 190.4rem;
+  }
 }
+
+
+//======================//
+//--Swiper JS Classes--//
+//=====================//
 
 
 .swiper{
@@ -12,6 +21,16 @@
 
 .swiper-wrapper{
   
+}
+
+.swiper-button-prev{
+  color: abstracts.$swiper-theme-color;
+  top: 19rem;
+  
+}
+.swiper-button-next{
+  color: abstracts.$swiper-theme-color;
+  top: 19rem;
 }
 
 //=======================//
@@ -239,7 +258,7 @@
   //Underline on the sub-headings
   
   .section-title {
-    font-size: 5rem;
+    font-size: 3.8rem;
   
     &::before {
       content: "";
@@ -255,6 +274,114 @@
 
 
 
+}
+
+@media screen and (min-width: abstracts.$breakpoint-xl) {
+
+
+  //=======================//
+  //--Section Block class--//
+  //=======================//
+
+  //This is block on the story and inspiration section
+
+  .section-block {
+    &::after {
+      display: none;
+    }
+  }
+  .section-block-light-lg {
+    &::after {
+      display: none;
+    }
+  }
+
+  .main-section-block {
+    position: relative;
+    overflow: initial;
+
+    &::after {
+      content: "";
+      background: #ffd6a508;
+      width: 34rem;
+      max-height: initial;
+      height: 140rem;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+    }
+
+    &-left {
+      position: relative;
+      overflow: initial;
+
+      &::after {
+        content: "";
+        background: #ffd6a508;
+        width: 34rem;
+        max-height: initial;
+        height: 120rem;
+        right: initial;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+      }
+    }
+  }
+
+  //======================//
+  //-- Paragraph classes--//
+  //======================//
+
+  .p-style {
+    color: abstracts.$text-body-color;
+    letter-spacing: 1px;
+    line-height: 2;
+    font-size: 2.3rem;
+  }
+
+//=======================//
+//--Sub-heading classes--//
+//=======================//
+
+.info__text-content {
+    align-self: center;
+    padding: 5rem 4rem;
+  }
+  
+  //Underline on the sub-headings
+  
+  .section-title {
+    font-size: 6.4rem;
+  
+    &::before {
+      content: "";
+      background: abstracts.$sub-heading-color;
+      width: 100%;
+      height: 8px;
+      position: absolute;
+      top: 90%;
+    }
+  }
+
+
+
+
+
+}
+
+
+//
+
+.container {
+  @include abstracts.min-breakpoint(abstracts.$breakpoint-xl){
+    max-width: 190.4rem;
+  }
+  @include abstracts.min-breakpoint(abstracts.$breakpoint-xxl){
+    max-width: 240.4rem;
+  }
 }
 
 

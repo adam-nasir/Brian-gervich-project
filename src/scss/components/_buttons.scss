@@ -61,15 +61,29 @@
 //==================================//
 
 // Large Breakpoint Styling
-@media screen and (max-width: 1053px) and (min-width:992px){
-    .btn {
-        @extend %btn-shared;
-      
-      
-        &-transparent-services {
-          padding: 0.33em 1.8em;
+@media screen and (max-width: 1054px) and (min-width: 992px) {
+  .btn {
+    @extend %btn-shared;
 
-        }
+    &-transparent-services {
+      padding: 0.33em 1.8em;
+    }
+  }
+}
+// XX-Large Breakpoint Styling
+@media screen and (min-width: abstracts.$breakpoint-xxl) {
+  .btn {
+    font-size: 2.1rem;
+    &-transparent {
+      font-size: 2.1rem;
     }
 
+    &-card {
+      font-size: 2.1rem;
+    }
+
+    &-submit {
+      font-size: 1.7rem;
+    }
+  }
 }

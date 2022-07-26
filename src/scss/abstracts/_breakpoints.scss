@@ -1,4 +1,40 @@
+// Width breakpoints
 $breakpoint-med: 45em;
 $breakpoint-lg: 62em;
-$breakpoint-xl: 87em;
+$breakpoint-xl: 120em;
+$breakpoint-xxl: 160em;
 
+
+// Height breakpoints
+$height-breakpoint: 84.375em;
+
+//Contact breakpoint
+$textarea-line-3-sm: 24.75em;
+
+
+
+@mixin max-min-breakpoint($max-breakpoint, $min-breakpoint){
+    @media screen and (max-width: $max-breakpoint) and (min-width: $min-breakpoint){
+        @content;
+    }
+}
+
+@mixin max-breakpoint($max-breakpoint){
+    @media screen and (max-width: $max-breakpoint){
+        @content;
+    }
+}
+
+
+@mixin min-breakpoint($min-breakpoint){
+    @media screen and (min-width: $min-breakpoint){
+        @content;
+    }
+}
+
+
+@mixin min-height-breakpoint($min-breakpoint){
+    @media screen and (min-height: $min-breakpoint){
+        @content;
+    }
+}

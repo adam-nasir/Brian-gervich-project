@@ -1,4 +1,5 @@
 @use "../abstracts";
+
 @use "../base";
 
 .form {
@@ -128,7 +129,6 @@
 
 .form__textarea {
   position: relative;
-  
 
   textarea {
     padding: 0.5rem;
@@ -159,7 +159,7 @@
 
 #textarea-line {
   &-1 {
-    top:65px;
+    top: 65px;
     transform: translateY(100%);
     transition: transform 0.3s ease;
   }
@@ -171,11 +171,14 @@
     transition: transform 0.4s ease;
   }
   &-3 {
-    left: 98.6%;
-    width:4px;
+    left: 99.4%;
+    width: 4px;
     top: 64px;
     transform: translateY(100%);
     transition: transform 0.5s ease;
+    @include abstracts.max-breakpoint(24.75em){
+      left: 98.9%;
+    }
   }
   &-4 {
     height: 3px;
@@ -186,18 +189,18 @@
   }
 }
 
-.textarea-class:focus ~ #textarea-line-1{
+.textarea-class:focus ~ #textarea-line-1 {
   transform: translateY(0%);
 }
 
-.textarea-class:focus ~ #textarea-line-2{
+.textarea-class:focus ~ #textarea-line-2 {
   transform: translateX(0%);
 }
-.textarea-class:focus ~ #textarea-line-3{
+.textarea-class:focus ~ #textarea-line-3 {
   transform: translateY(0%);
 }
 
-.textarea-class:focus ~ #textarea-line-4{
+.textarea-class:focus ~ #textarea-line-4 {
   transform: translateX(0%);
 }
 
@@ -208,8 +211,95 @@
 // left: 0;
 // background-color: abstracts.$heading-color;
 
-
-
 //====================================//
 //-----------Media Queries-----------//
 //==================================//
+
+@media screen and (min-width: abstracts.$breakpoint-med) {
+  .form {
+    margin-inline: auto;
+    // margin-block: 2rem 3rem;
+    max-width: 105rem;
+
+    .section-title {
+      font-size: 3.8rem;
+    }
+
+    .all-form-content {
+      max-width: 65rem;
+      margin: auto;
+    }
+  }
+
+  .contact-info {
+    color: #fff;
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-size: 2rem;
+  
+
+  
+    &__email {
+      .icon {
+        font-size: 2.5rem;
+        margin-right: 1rem;
+      }
+    }
+    &__phone {
+      .icon {
+        font-size: 2.3rem;
+        margin-right: 1rem;
+      }
+    }
+    &__social-media {
+      display: inline-block;
+      font-size: 3rem;
+      margin-bottom: 6rem;
+    }
+  }
+
+  .form__content {
+    .form__input {
+      label {
+        font-size: 2.5rem;
+        
+      }
+    }
+  }
+
+  #textarea-line {
+    &-1 {
+      top: 70px;
+    }
+    &-2 {
+      top: 70px;
+    }
+    &-3 {
+      left: 99.4%;
+      width: 4px;
+      top: 70px;
+      transform: translateY(100%);
+      transition: transform 0.5s ease;
+    }
+    &-4 {
+      height: 3px;
+      width: 100%;
+      top: 99.4%;
+      transform: translateX(100%);
+      transition: transform 0.4s ease;
+    }
+  }
+}
+
+// Large Breakpoint Styling
+@media screen and (min-width: abstracts.$breakpoint-lg) {
+  .form {
+    .section-title {
+      margin-block: 4rem 2.8rem;
+    }
+  }
+}
+
+// X-large Breakpoint Styling
+@media screen and (min-width: abstracts.$breakpoint-xl) {
+}

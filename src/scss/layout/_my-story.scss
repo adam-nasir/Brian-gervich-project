@@ -60,3 +60,16 @@
     max-width: 62rem;
   }
 }
+
+
+@media screen and (min-width: abstracts.$breakpoint-xxl) {
+  .about__img-content {
+    height: 150rem;
+  }
+
+  .about__text-content {
+    order: 2;
+    right: 14.2rem;
+    max-width: 75rem;
+  }
+}
