@@ -217,7 +217,7 @@ p {
 .form {
   padding-inline: 3rem;
   text-align: center;
-  background: linear-gradient(90deg, rgba(50, 61, 88, 0.9444911754) 100%, #323d58 100%), url(../../../assets/images/form-bg.jpg) no-repeat center center/cover;
+  background: linear-gradient(90deg, rgba(50, 61, 88, 0.9444911754) 100%, #323d58 100%), url(../../assets/images/form-bg.jpg) no-repeat center center/cover;
 }
 .form .section-title {
   margin-block: 4rem 2.8rem;
@@ -853,7 +853,7 @@ p {
 }
 .hero {
   min-height: 100vh;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.73) 34%, rgba(0, 0, 0, 0.56) 86%), url("../../../assets/images/hero-background-mid.jpg") no-repeat 2% 20%/cover;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.73) 34%, rgba(0, 0, 0, 0.56) 86%), url("../../assets/images/hero-background-mid.jpg") no-repeat 2% 20%/cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -919,11 +919,6 @@ p {
   }
 }
 @media screen and (min-width: 62em) {
-  .hero {
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6699813715) 71%, rgba(0, 0, 0, 0.4010738084) 100%), url("../../../assets/images/hero-background-mid.jpg") no-repeat 2% 20%/cover;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
   .hero .hero-container {
     width: 100%;
   }
@@ -1420,7 +1415,7 @@ p {
 
 @media screen and (min-width: 62em) {
   .services {
-    background: linear-gradient(90deg, rgba(50, 61, 88, 0.932) 100%, rgba(0, 0, 0, 0.9977124639) 100%), url("../../../assets/images/service-bg.jpg") no-repeat center center/cover;
+    background: linear-gradient(90deg, rgba(50, 61, 88, 0.932) 100%, rgba(0, 0, 0, 0.9977124639) 100%), url("../../assets/images/service-bg.jpg") no-repeat center center/cover;
   }
 
   .service-container {
