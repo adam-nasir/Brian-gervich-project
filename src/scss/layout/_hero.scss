@@ -8,14 +8,13 @@
       rgba(0, 0, 0, 0.73) 34%,
       rgba(0, 0, 0, 0.56) 86%
     ),
-    url("../../../assets/images/hero-background-mid.jpg") no-repeat 2% 20% /
-      cover;
+    url("../../assets/images/hero-background-mid.jpg") no-repeat 2% 20% / cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  @include abstracts.min-height-breakpoint(abstracts.$height-breakpoint){
+  @include abstracts.min-height-breakpoint(abstracts.$height-breakpoint) {
     min-height: 100%;
   }
 }
@@ -27,7 +26,7 @@
   flex-direction: column;
   align-items: center;
 
-  @include abstracts.min-height-breakpoint(abstracts.$height-breakpoint){
+  @include abstracts.min-height-breakpoint(abstracts.$height-breakpoint) {
     padding-block: 25rem 20rem;
   }
 }
@@ -62,19 +61,14 @@
   margin-bottom: 4rem;
 }
 
-.hero-button-container{
+.hero-button-container {
   display: flex;
   flex-direction: column;
 }
 
-
-
-
-
 //====================================//
 //-----------Media Queries-----------//
 //==================================//
-
 
 @media screen and (min-width: abstracts.$breakpoint-med) {
   .hero__content {
@@ -85,18 +79,7 @@
 // Large Breakpoint Styling
 @media screen and (min-width: abstracts.$breakpoint-lg) {
   .hero {
-    background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.6699813714548319) 71%,
-        rgba(0, 0, 0, 0.4010738084296218) 100%
-      ),
-      url("../../../assets/images/hero-background-mid.jpg") no-repeat 2% 20% /
-        cover;
-
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    .hero-container{
+    .hero-container {
       width: 100%;
     }
   }
@@ -122,7 +105,6 @@
   .main__subtitle {
     font-size: 1.75rem;
     margin-left: 1rem;
-
   }
 
   .description {
@@ -132,22 +114,20 @@
     margin-bottom: 4rem;
     margin-left: 1rem;
     font-size: 1.75rem;
-    
   }
 
-  .hero-button-container{
+  .hero-button-container {
     display: initial;
     margin-left: 0.8rem;
 
-    .btn{
-      margin-right:2.5rem;
+    .btn {
+      margin-right: 2.5rem;
     }
   }
 }
 
 // X-large Breakpoint Styling
 @media screen and (min-width: abstracts.$breakpoint-xxl) {
-
   .hero__content {
     padding-block: 52rem 10rem;
     text-align: left;
@@ -158,7 +138,6 @@
   }
 
   .main__title {
-    
     font-size: 14rem;
     text-transform: uppercase;
     text-align: left;
@@ -170,7 +149,6 @@
   .main__subtitle {
     font-size: 2.4rem;
     margin-left: 1.4rem;
-
   }
 
   .description {
@@ -180,16 +158,11 @@
     margin-bottom: 4rem;
     margin-left: 1.4rem;
     font-size: 2.1rem;
-    
   }
-
 }
 
-
-
 .hero__content {
-  @include abstracts.min-height-breakpoint(abstracts.$height-breakpoint){
+  @include abstracts.min-height-breakpoint(abstracts.$height-breakpoint) {
     padding-block: 31rem 27rem;
   }
 }
-
