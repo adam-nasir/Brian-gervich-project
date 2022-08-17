@@ -1,8 +1,8 @@
-#Personal Chef Website
+# Personal Chef Website
 
 Its a website that I designed mockup and built it out.
 
-##Tech Stack
+## Tech Stack
 
 - HTML
 - Dart SASS
