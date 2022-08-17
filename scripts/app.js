@@ -79,8 +79,7 @@ headerHerotl
 let storytl = gsap.timeline({
   scrollTrigger: {
     trigger: ".about",
-
-    start: "90px 200px",
+    start: "60vh center",
   },
   ease: "power4.inOut",
 });
@@ -102,8 +101,8 @@ storytl
 let inspirationtl = gsap.timeline({
   scrollTrigger: {
     trigger: ".inspiration",
-
-    start: "100px 200px",
+    markers: true,
+    start: "90vh center",
   },
   ease: "power4.inOut",
 });
