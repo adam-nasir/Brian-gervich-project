@@ -101,7 +101,6 @@ storytl
 let inspirationtl = gsap.timeline({
   scrollTrigger: {
     trigger: ".inspiration",
-    markers: true,
     start: "90vh center",
   },
   ease: "power4.inOut",
