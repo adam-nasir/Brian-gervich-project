@@ -1,5 +1,9 @@
 @use "../abstracts";
 
+.services{
+    background: abstracts.$primary-bg-color;
+}
+
 
 //====================================//
 //-----------Media Queries-----------//
