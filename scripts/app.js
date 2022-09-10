@@ -152,7 +152,6 @@ if (window.innerWidth >= 400) {
     scrollTrigger: {
       trigger: ".contact",
       start: "60px 200px",
-      markers: true,
     },
     ease: "power4.inOut",
   });
@@ -253,7 +252,7 @@ if (window.innerWidth >= 400) {
   let testimoniestl = gsap.timeline({
     scrollTrigger: {
       trigger: ".testimonies",
-    
+
       start: "300px 500px",
     },
     ease: "power4.inOut",
