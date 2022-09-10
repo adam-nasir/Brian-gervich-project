@@ -56,104 +56,222 @@ hamburgerMenu.addEventListener("click", openCloseMobileMenu);
 /*==============*/
 
 // Header Section
+if (window.innerWidth >= 400) {
+  let headerHerotl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".main-header",
+      toggleAction: "play complete none none",
+    },
+    ease: "power4.inOut",
+  });
 
-let headerHerotl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".main-header",
-    toggleAction: "play complete none none",
-  },
-  ease: "power4.inOut",
-});
+  headerHerotl
+    .fromTo(".logo", { opacity: 0 }, { opacity: 1, duration: 0.2 })
+    .fromTo(".navbar", { opacity: 0 }, { opacity: 1, duration: 0.8 })
+    .fromTo(
+      ".hero__content",
+      { opacity: 0, y: 100 },
+      { opacity: 1, y: 0, duration: 0.9 }
+    );
 
-headerHerotl
-  .fromTo(".logo", { opacity: 0 }, { opacity: 1, duration: 0.2 })
-  .fromTo(".navbar", { opacity: 0 }, { opacity: 1, duration: 0.8 })
-  .fromTo(
-    ".hero__content",
-    { opacity: 0, y: 100 },
-    { opacity: 1, y: 0, duration: 0.9 }
-  );
+  // Story Section
 
-// Story Section
+  let storytl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".about",
+      start: "60vh center",
+    },
+    ease: "power4.inOut",
+  });
 
-let storytl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".about",
-    start: "60vh center",
-  },
-  ease: "power4.inOut",
-});
+  storytl
+    .fromTo(
+      ".about__img-content",
+      { opacity: 0, x: -100 },
+      { opacity: 1, x: 0, duration: 1 }
+    )
+    .fromTo(
+      ".about__text-content",
+      { opacity: 0, x: 100 },
+      { opacity: 1, x: 0, duration: 1.2 }
+    );
 
-storytl
-  .fromTo(
-    ".about__img-content",
-    { opacity: 0, x: -100 },
-    { opacity: 1, x: 0, duration: 1 }
-  )
-  .fromTo(
+  // Inspiration Section
+
+  let inspirationtl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".inspiration",
+      start: "90vh center",
+    },
+    ease: "power4.inOut",
+  });
+
+  inspirationtl
+    .fromTo(
+      ".my-inspiration__text-content",
+      { opacity: 0, x: -100 },
+      { opacity: 1, x: 0, duration: 1 }
+    )
+    .fromTo(
+      ".inspiration__img-content",
+      { opacity: 0, x: 100 },
+      { opacity: 1, x: 0, duration: 1.5 }
+    );
+
+  // Service Section
+
+  let servicestl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".services",
+
+      start: "60px 200px",
+    },
+    ease: "power4.inOut",
+  });
+
+  servicestl.from(".card", { stagger: 0.3, opacity: 0, y: -100 });
+
+  // Testimonies Section
+
+  let testimoniestl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".testimonies",
+
+      start: "60px 200px",
+    },
+    ease: "power4.inOut",
+  });
+
+  testimoniestl
+    .from(".testimonies .section-title", { opacity: 0, duration: 0.5 })
+    .from(".testimonies__content", { opacity: 0 }, "+=0.2");
+
+  // Contact Section
+
+  let contacttl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".contact",
+      start: "60px 200px",
+      markers: true,
+    },
+    ease: "power4.inOut",
+  });
+
+  contacttl.from(".form", { opacity: 0, y: 40, duration: 1 });
+} else if (window.innerWidth <= 400) {
+  let headerHerotl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".main-header",
+      toggleAction: "play complete none none",
+    },
+    ease: "power4.inOut",
+  });
+
+  headerHerotl
+    .fromTo(".logo", { opacity: 0 }, { opacity: 1, duration: 0.2 })
+    .fromTo(".navbar", { opacity: 0 }, { opacity: 1, duration: 0.8 })
+    .fromTo(
+      ".hero__content",
+      { opacity: 0, y: 100 },
+      { opacity: 1, y: 0, duration: 0.9 }
+    );
+
+  // Story Section
+
+  let storyInfo = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".about__text-content ",
+      start: "60vh 200px",
+    },
+    ease: "power4.inOut",
+  });
+
+  storyInfo.fromTo(
     ".about__text-content",
     { opacity: 0, x: 100 },
     { opacity: 1, x: 0, duration: 1.2 }
   );
+  let storyImg = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".about__img-content ",
+      start: "-40vh 200px",
+    },
+    ease: "power4.inOut",
+  });
 
-// Inspiration Section
+  storyImg.fromTo(
+    ".about__img-content",
+    { opacity: 0, x: -100 },
+    { opacity: 1, x: 0, duration: 0.9 }
+  );
 
-let inspirationtl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".inspiration",
-    start: "90vh center",
-  },
-  ease: "power4.inOut",
-});
+  // Inspiration Section
 
-inspirationtl
-  .fromTo(
+  let inspirationTexttl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".my-inspiration__text-content",
+      start: "90vh center",
+    },
+    ease: "power4.inOut",
+  });
+
+  inspirationTexttl.fromTo(
     ".my-inspiration__text-content",
     { opacity: 0, x: -100 },
     { opacity: 1, x: 0, duration: 1 }
-  )
-  .fromTo(
-    ".inspiration__img-content",
-    { opacity: 0, x: 100 },
-    { opacity: 1, x: 0, duration: 1.5 }
   );
 
-// Service Section
+  let inspirationImgtl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".inspiration__img-content",
+      start: "-20vh center",
+    },
+    ease: "power4.inOut",
+  });
 
-let servicestl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".services",
+  inspirationImgtl.fromTo(
+    ".inspiration__img-content",
+    { opacity: 0 },
+    { opacity: 1, duration: 1.2 }
+  );
 
-    start: "60px 200px",
-  },
-  ease: "power4.inOut",
-});
+  // Service Section
 
-servicestl.from(".card", { stagger: 0.3, opacity: 0, y: -100 });
+  let servicestl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".services",
 
-// Testimonies Section
+      start: "50vh 400px",
+    },
+    ease: "power4.inOut",
+  });
 
-let testimoniestl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".testimonies",
+  servicestl.from(".card", { stagger: 0.3, opacity: 0, y: -100 });
 
-    start: "60px 200px",
-  },
-  ease: "power4.inOut",
-});
+  // Testimonies Section
 
-testimoniestl
-  .from(".testimonies .section-title", { opacity: 0, duration: 0.5 })
-  .from(".testimonies__content", { opacity: 0 }, "+=0.2");
+  let testimoniestl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".testimonies",
+    
+      start: "300px 500px",
+    },
+    ease: "power4.inOut",
+  });
 
-// Contact Section
+  testimoniestl
+    .from(".testimonies .section-title", { opacity: 0, duration: 0.5 })
+    .from(".testimonies__content", { opacity: 0 }, "+=0.2");
 
-let contacttl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".contact",
-    start: "60px 200px",
-  },
-  ease: "power4.inOut",
-});
+  // Contact Section
 
-contacttl.from(".form", { opacity: 0, y: 40, duration: 1.2 });
+  let contacttl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".contact",
+      start: "60px 400px",
+    },
+    ease: "power4.inOut",
+  });
+
+  contacttl.from(".form", { opacity: 0, duration: 1.2 });
+}

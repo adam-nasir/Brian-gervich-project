@@ -1,12 +1,16 @@
 @use "../abstracts";
 
-.contact{
-    background-color: abstracts.$secondary-bg-color;
-    padding-block: 7rem 6rem;
-    
+.contact {
+  background-color: abstracts.$secondary-bg-color;
+  padding-block: 7rem 6rem;
 }
-
 
 //====================================//
 //-----------Media Queries-----------//
 //==================================//
+
+@media screen and (max-width: 1052px) {
+  .contact {
+    padding-block: 0;
+  }
+}

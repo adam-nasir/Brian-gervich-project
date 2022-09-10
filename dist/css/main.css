@@ -1450,6 +1450,11 @@ p {
   padding-block: 7rem 6rem;
 }
 
+@media screen and (max-width: 1052px) {
+  .contact {
+    padding-block: 0;
+  }
+}
 .footer {
   text-align: center;
   color: #bbbbbb;
